@@ -1,1 +1,10 @@
-= debug current_user
+- if current_user
+  - if current_user.angellist_oauth_token.present?
+    You're authenticated with Angellist
+  - else
+    = link_to "Authenticate with Angellist", "/auth/angellist"
+
+  = link_to "Signout", signout_path
+- else
+  = link_to "Sign in with Twitter", "/auth/twitter"
+
