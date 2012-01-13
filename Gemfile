@@ -16,8 +16,10 @@ end
 gem 'jquery-rails'
 
 gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-angellist', git: 'git://github.com/railsjedi/omniauth-angellist.git'
 gem 'twitter'
-gem 'angellist_api', git: 'git://github.com/paulsingh/angellist-api.git'
+gem 'angellist_api', git: 'git://github.com/utkarshkukreti/angellist-api.git', branch: 'feature/bump-hashie-to-1.x'
 gem 'haml-rails'
 gem 'compass', '~> 0.12.alpha.4'
 
