@@ -1,0 +1,7 @@
+%h2 following tweets are found containing #ag hashtag & published
+- @tweets.each do |t|
+		%p= t.text
+%br
+= link_to "Fetch & Publish again", fetch_n_publish_path
+%br
+= link_to "Go back", root_path, :notice => "Done updating ?"

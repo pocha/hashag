@@ -1,0 +1,6 @@
+= form_for @startup, :url => set_startup_path do |f|
+	= f.label "Startup Domain (stalkninja.com)"
+	= f.text_field :startup_domain
+	= f.submit "Update Startup Id"
+%br
+= link_to "Back", root_path, notice: "Whoa, you dont intend to update ?" 

@@ -1,6 +1,14 @@
 TwitterAngellistBridge::Application.routes.draw do
+ 
   match "/auth/:provider/callback" => "sessions#create"
   match "/signout" => "sessions#destroy", as: :signout
+
+	
+	match "/get_startup" => "tweets#get_startup"
+	match "/set_startup" => "tweets#set_startup", :via => :post
+
+	match "/fetch_n_publish" => "tweets#fetch_n_publish"
+
 
   root to: "pages#index"
 

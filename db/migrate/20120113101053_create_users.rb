@@ -8,6 +8,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :twitter_oauth_token_secret
       t.string :angellist_oauth_token
       t.string :angellist_oauth_token_secret
+			t.integer :startup_id
+			t.string :startup_domain
 
       t.timestamps
     end
