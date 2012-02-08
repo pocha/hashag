@@ -19,7 +19,7 @@ class TweetsController < ApplicationController
 	end
 
 	def set_startup
-		domain = params[:startup][:domain]
+		domain = params[:user][:startup_domain]
 		current_user.startup_domain = domain
 		current_user.startup_id = AngellistApi.startup_search(:domain => domain)[:id]
 		current_user.save
