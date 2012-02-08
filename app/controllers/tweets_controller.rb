@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
 		client = AngellistApi::Client.new(:access_token => current_user.angellist_oauth_token)
 		
 		@tweets.each do |t|
-			client.post_status_update(:startup_id => current_user.startup_id, :message => t.text)
+			client.post_status_updates(:startup_id => current_user.startup_id, :message => t.text)
 		end
 
 		render 'fetch_n_publish'
