@@ -1,5 +1,5 @@
-= form_for @startup, :url => set_startup_path do |f|
-	= f.label "Startup Domain (stalkninja.com)"
+= form_for @startup, :via => :post, :url => set_startup_path do |f|
+	= f.label "Startup Domain (like stalkninja.com)"
 	= f.text_field :startup_domain
 	= f.submit "Update Startup Id"
 %br
