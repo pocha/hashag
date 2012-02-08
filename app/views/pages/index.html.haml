@@ -1,19 +1,21 @@
 - if current_user
   - if current_user.angellist_oauth_token.present?
     You're authenticated with Angellist
+		%br
+		- if current_user.startup_id.nil?
+			= link_to "Get your startup id", get_startup_path
+		-else
+			Your startup id is #{current_user.startup_id}
+			= link_to "Update your startup id", get_startup_path
+			%br
+			= link_to "Check & publish my tweets to angelList", fetch_n_publish_path
+
   - else
     = link_to "Authenticate with Angellist", "/auth/angellist"
 
   = link_to "Signout", signout_path
 	%br
 
-	- if current_user.startup_id.nil?
-		= link_to "Get your startup id", get_startup_path
-	-else
-		Your startup id is #{current_user.startup_id}
-		= link_to "Update your startup id", get_startup_path
-		%br
-		= link_to "Check & publish my tweets to angelList", fetch_n_publish_path
 
 - else
   = link_to "Sign in with Twitter", "/auth/twitter"
