@@ -22,6 +22,7 @@ gem 'twitter'
 gem 'angellist_api', git: 'git://github.com/utkarshkukreti/angellist-api.git', branch: 'feature/bump-hashie-to-1.x'
 gem 'haml-rails'
 gem 'compass', '~> 0.12.alpha.4'
+gem 'heroku'
 
 group :test, :development do
   gem 'sqlite3'
