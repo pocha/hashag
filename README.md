@@ -16,7 +16,7 @@ Although the app can be deployed on any rails server, below are the steps to get
 2. Get yourself an account at http://heroku.com . Come back to your rails code base directory. Do 'heroku login' & pass your details. Follow http://devcenter.heroku.com/articles/git & it would create your own app with an awesome name (mine is blooming-frost-6120).
 3. The app authenticates via twitter & angellist. You need to create your apps at http://dev.twitter.com/apps & http://angel.co/api -> Your Apps . The 'callback url' is important. This is the url to which twitter/angellist sends you oauth token back. My callback url is http://blooming-frost-6120.herokuapp.com/auth/twitter/callback for twitter &  http://blooming-frost-6120.herokuapp.com/auth/angellist/callback for angellist. You need to specify yours according to your url.
 4. Come back to your rails app home directory. Add keys & secret of your twitter & angellist apps as    
-      heroku config:add RAILS_ENV=development TWITTER_KEY=<xxx> TWITTER_SECRET=<xxx> ANGELLIST_KEY=<xxx> ANGELLIST_SECRET=<xxx>
+				heroku config:add RAILS_ENV=development TWITTER_KEY=xxx TWITTER_SECRET=xxx ANGELLIST_KEY=xxx ANGELLIST_SECRET=xxx
 	These values will be used in config/initializers/omniauth.rb .
 5. Do 'git push heroku' for the app to be deployed & launch on heroku.
 
@@ -27,6 +27,8 @@ Although the app can be deployed on any rails server, below are the steps to get
 2. Go to http://blooming-frost-6120.herokuapp.com/ , authenticate with your twitter & then angellist. Get your startup id from your domain (mine is stalkninja.com).
 
 3. Now go to twitter & tweet from your account with '#ag' in it. Come back to the app, hit on 'Check & publish my tweets to angellist'. The app would fetch the tweets &  would publish it on your startup profile. 
+
+P.S. - it seems getting an angellist account & creating your own startup is a pain. Drop me a mail at pocha(at)stalkninja(dot)com & I would share my credentials with you.
 
 ### Changes needed
 
