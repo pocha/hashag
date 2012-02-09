@@ -2,7 +2,7 @@
 
 A rails based application to publish tweets with hashtag #ag on user's startup profile at angellist (angel.co)
 
-<a href=" http://blooming-frost-6120.herokuapp.com">See the Live Demo here.</a>
+<a href="http://blooming-frost-6120.herokuapp.com">See the Live Demo here.</a>
 
 ## Documentation
 
