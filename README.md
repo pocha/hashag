@@ -17,7 +17,7 @@ Although the app can be deployed on any rails server, below are the steps to get
 3. The app authenticates via twitter & angellist. You need to create your apps at http://dev.twitter.com/apps & http://angel.co/api -> Your Apps . The 'callback url' is important. This is the url to which twitter/angellist sends you oauth token back. My callback url is http://blooming-frost-6120.herokuapp.com/auth/twitter/callback for twitter &  http://blooming-frost-6120.herokuapp.com/auth/angellist/callback for angellist. You need to specify yours according to your url.
 4. Come back to your rails app home directory. Add keys & secret of your twitter & angellist apps as    
 			
-				heroku config:add RAILS_ENV=development TWITTER_KEY=xxx TWITTER_SECRET=xxx ANGELLIST_KEY=xxx ANGELLIST_SECRET=xxx
+		heroku config:add RAILS_ENV=development TWITTER_KEY=xxx TWITTER_SECRET=xxx ANGELLIST_KEY=xxx ANGELLIST_SECRET=xxx
 
 	These values will be used in config/initializers/omniauth.rb .
 
