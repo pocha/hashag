@@ -1,11 +1,9 @@
 - if current_user
-  %div{:style => 'float:left'} Welcome current_user.name
+  %div{:style => 'float:left'} Welcome #{current_user.name}
   %div{:style => 'float:right'}= link_to "Signout", signout_path
   %div{:style => 'clear:both'}
   %br
   - if current_user.angellist_oauth_token.present?
-    You're authenticated with Angellist
-    %br
     - if current_user.startup_id.nil?
       = link_to "Get your startup id", get_startup_path
     -else
