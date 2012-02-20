@@ -1,13 +1,8 @@
 class TweetsController < ApplicationController
   def fetch_n_publish
-		@tweets = Twitter.search("from:#{current_user.name} #ag", :rpp => 1, :result_type => 'recent')
-
-		client = AngellistApi::Client.new(:access_token => current_user.angellist_oauth_token)
 		
-		@tweets.each do |t|
-			client.post_status_updates(:startup_id => current_user.startup_id, :message => t.text)
-		end
-
+		@tweets = current_user.fetch_n_publish
+		
 		render 'fetch_n_publish'
 
   end

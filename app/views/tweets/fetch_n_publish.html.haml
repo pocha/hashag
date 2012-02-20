@@ -1,6 +1,9 @@
 %h2 following tweets are found containing #ag hashtag & published
-- @tweets.each do |t|
-		%p= t.text
+- if @tweets.count == 0
+  No Tweets Found
+-else 
+  - @tweets.each do |t|
+    %p= t.text
 %br
 = link_to "Fetch & Publish again", fetch_n_publish_path
 %br
