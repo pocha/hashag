@@ -14,6 +14,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'therubyracer'
 
 gem 'omniauth'
 gem 'omniauth-twitter'
