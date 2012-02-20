@@ -1,3 +1,4 @@
+%h1 hashAG - alpha
 - if current_user
   %div{:style => 'float:left'} Welcome #{current_user.name}
   %div{:style => 'float:right'}= link_to "Signout", signout_path
@@ -9,12 +10,20 @@
     -else
       Your startup #{current_user.startup_domain} (#{current_user.startup_id})
       = link_to "Update your startup id", get_startup_path
+      %h2 You are good now. Start tweeting with hashtag #ag & wait for 5 min for it to appear on your startup status
       %br
-      = link_to "Check & publish my tweets to angelList", fetch_n_publish_path
+      %br
+      = link_to "Check & publish my tweets to angelList now", fetch_n_publish_path
 
   - else
     = link_to "Authenticate with Angellist", "/auth/angellist"
     
 - else
+  %h2 The app hooks up your twitter account to your angel.co startup.
+  %p It checks your tweets with hashtag #ag & publishes them to your startup status
   = link_to "Sign in with Twitter", "/auth/twitter"
+
+Code @ https://github.com/pocha/hashag
+%br
+Thanks to @utkarshkukreti for the first draft & couple of Ninjas for testing. Check conversation at %a{:href => 'http://groups.google.com/group/ninjaclan/browse_thread/thread/549762aa22a89540'}here
 
