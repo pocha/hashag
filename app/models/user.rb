@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
-      user.name = auth["info"]["name"]
+      user.name = auth["screen_name"]
       user.twitter_oauth_token = auth["credentials"]["token"]
       user.twitter_oauth_token_secret = auth["credentials"]["secret"]
     end
