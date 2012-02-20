@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 			config.oauth_token_secret = self.twitter_oauth_token_secret
 		end
 		
-		@tweets = Twitter.search("from:#{current_user.name} #ag", :since_id => self.last_tweet_id :result_type => 'recent')
+		@tweets = Twitter.search("from:#{self.name} #ag", :since_id => self.last_tweet_id, :result_type => 'recent')
 
 		client = AngellistApi::Client.new(:access_token => self.angellist_oauth_token)
 		
