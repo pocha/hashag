@@ -36,8 +36,8 @@ class User < ActiveRecord::Base
 				self.save
 			end
 			
-			return {:status => true, :tweets => @tweets }
-		
+			return @tweets 
+			
 
 	end
 

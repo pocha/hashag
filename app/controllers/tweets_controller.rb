@@ -1,14 +1,9 @@
 class TweetsController < ApplicationController
   def fetch_n_publish
 		
-		return_value = current_user.fetch_n_publish
+		@tweets = current_user.fetch_n_publish
 
-		if (return_value[:status] == false)
-			render :text => return_value[:message]
-		else	
-			@tweets = return_value[:tweets]
-			render 'fetch_n_publish'
-		end
+		render 'fetch_n_publish'
 
   end
 
