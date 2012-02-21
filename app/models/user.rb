@@ -39,8 +39,8 @@ class User < ActiveRecord::Base
 			
 			return {:status => true, :tweets => @tweets }
 		
-		rescue Exception => e
-			return {:status => false, :message => e.message}
+		rescue
+			return {:status => false, :message => "An error has occured"}
 		end
 
 	end
