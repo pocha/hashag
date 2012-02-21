@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 
 	def fetch_n_publish
 	
+		begin
 
 			Twitter.configure do |config|
 				config.oauth_token = self.twitter_oauth_token
@@ -36,8 +37,11 @@ class User < ActiveRecord::Base
 				self.save
 			end
 			
-			return @tweets 
+			return {:status => true, :tweets => @tweets }
 		
+		rescue Exception => e
+			return {:status => false, :message => e.message}
+		end
 
 	end
 

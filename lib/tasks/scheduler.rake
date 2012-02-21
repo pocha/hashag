@@ -4,8 +4,8 @@ namespace :publish do
 		User.all.each do |user|
 			puts "parsing user #{user.name}"
 			if (!user.startup_id.nil?)
-				@tweets = user.fetch_n_publish
-				puts @tweets.to_yaml
+				return_data = user.fetch_n_publish
+				puts return_data.to_yaml
 			end
 		end
 	end
