@@ -1,5 +1,6 @@
 %h1 hashAG - alpha
 %p{:style => 'color:red'} The app is in development mode & errors are not being handled graciously.
+%hr
 - if current_user
   %div{:style => 'float:left'} Welcome #{current_user.name}
   %div{:style => 'float:right'}= link_to "Signout", signout_path
@@ -30,6 +31,7 @@
 %br
 %br
 %br
+%hr
 Code @ https://github.com/pocha/hashag
 %br
 %br
