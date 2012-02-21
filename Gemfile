@@ -25,13 +25,12 @@ gem 'haml-rails'
 gem 'compass', '~> 0.12.alpha.4'
 gem 'heroku'
 gem 'taps'
+gem 'pg'
 
 group :test, :development do
-  gem 'sqlite3'
   gem 'rspec-rails'
 end
 
 group :production do
   gem 'unicorn'
-  gem 'pg'
 end
