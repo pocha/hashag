@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
 				client.post_status_updates(:startup_id => self.startup_id, :message => t.text)
 			end
 		
-			if (!@tweets[0].nil?)
+			if (!@tweets.empty?)
 				self.last_tweet_id = @tweets[0].id
 				self.save
 			end
