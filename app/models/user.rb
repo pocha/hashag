@@ -41,6 +41,7 @@ class User < ActiveRecord::Base
 		
 		rescue
 			puts "an error has occured"
+			return []
 		end
 
 	end
