@@ -24,7 +24,6 @@ gem 'angellist_api', git: 'git://github.com/utkarshkukreti/angellist-api.git', b
 gem 'haml-rails'
 gem 'compass', '~> 0.12.alpha.4'
 gem 'heroku'
-gem 'taps'
 gem 'pg'
 
 group :test, :development do
