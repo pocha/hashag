@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   end
 
   def add_angellist_from_omniauth(auth)
+    self.angellist_name = auth["info"]["name"]
     self.angellist_oauth_token = auth["credentials"]["token"]
     self.angellist_oauth_token_secret = auth["credentials"]["secret"]
     save!

@@ -12,7 +12,17 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+		if (params[:provider] == 'twitter')
+    	current_user.twitter_oauth_token = nil
+			current_user.twitter_oauth_token_secret = nil
+			current_user.save
+			session[:user_id] = nil
+		end
+
+		if (params[:provider] == 'angellist')
+			current_user.angellist_oauth_token = nil
+			current_user.save
+		end
     redirect_to root_path, notice: "Signed out!"
   end
 end

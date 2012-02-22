@@ -3,10 +3,11 @@
 %hr
 - if current_user
   %div{:style => 'float:left'} Welcome #{current_user.name}
-  %div{:style => 'float:right'}= link_to "Signout", signout_path
+  %div{:style => 'float:right'}= link_to "Signout", signout_path(:provider => 'twitter')
   %div{:style => 'clear:both'}
   %br
   - if current_user.angellist_oauth_token.present?
+    %div{:style => 'float:right'}= link_to "Signout of Angellist", signout_path(:provider => 'angellist')
     - if current_user.startup_id.nil?
       = link_to "Get your startup id", get_startup_path
     -else
@@ -16,7 +17,7 @@
       %br
       %br
       = link_to "Check & publish my tweets to angelList now", fetch_n_publish_path
-
+     %div{:style => 'clear:both'}
   - else
     = link_to "Authenticate with Angellist", "/auth/angellist"
     
