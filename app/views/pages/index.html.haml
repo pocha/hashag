@@ -2,12 +2,14 @@
 %p{:style => 'color:red'} The app is in development mode & errors are not being handled graciously.
 %hr
 - if current_user
-  %div{:style => 'float:left'} Welcome #{current_user.name}
+  %div{:style => 'float:left'} Welcome #{current_user.name}(Twitter)
   %div{:style => 'float:right'}= link_to "Signout", signout_path(:provider => 'twitter')
   %div{:style => 'clear:both'}
   %br
   - if current_user.angellist_oauth_token.present?
+    %div{:style => 'float:left'} Welcome #{current_user.angellist_name}(AngelList)
     %div{:style => 'float:right'}= link_to "Signout of Angellist", signout_path(:provider => 'angellist')
+    %div{:style => 'clear:both'}
     - if current_user.startup_id.nil?
       = link_to "Get your startup id", get_startup_path
     -else
@@ -17,7 +19,7 @@
       %br
       %br
       = link_to "Check & publish my tweets to angelList now", fetch_n_publish_path
-     %div{:style => 'clear:both'}
+     
   - else
     = link_to "Authenticate with Angellist", "/auth/angellist"
     
