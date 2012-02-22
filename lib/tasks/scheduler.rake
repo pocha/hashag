@@ -7,8 +7,8 @@ namespace :publish do
 				begin 
 					return_data = user.fetch_n_publish
 					puts return_data.to_yaml
-				rescue
-					puts "An error has occured"
+				rescue Exception => e
+					puts "Error: #{e}"
 				end
 			end
 		end
