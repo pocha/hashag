@@ -3,7 +3,7 @@
 %hr
 - if current_user
   %div{:style => 'float:left'} Welcome #{current_user.name}(Twitter)
-  %div{:style => 'float:right'}= link_to "Signout", signout_path(:provider => 'twitter')
+  %div{:style => 'float:right'}= link_to "Signout of Twitter", signout_path(:provider => 'twitter')
   %div{:style => 'clear:both'}
   %br
   - if current_user.angellist_oauth_token.present?
@@ -19,8 +19,8 @@
       %p The app would check every hour & update your startup status with your latest tweet containing #ag. Angellist allows only 10 updates per day & they override updates to show only one (latest) update for the day.
 
       %br
-      %br
       = link_to "Check & publish my tweets to angelList now", fetch_n_publish_path
+      %p Done setting up ? Just close the browser & go home. Signing out from angellist &/or twitter will destroy the tokens & the app would not publish on your stream anymore.
      
   - else
     = link_to "Authenticate with Angellist", "/auth/angellist"
