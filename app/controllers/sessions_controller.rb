@@ -21,6 +21,7 @@ class SessionsController < ApplicationController
 
 		if (params[:provider] == 'angellist')
 			current_user.angellist_oauth_token = nil
+			current_user.angellist_name = nil
 			current_user.save
 		end
     redirect_to root_path, notice: "Signed out!"
