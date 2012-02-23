@@ -15,7 +15,9 @@
     -else
       Your startup #{current_user.startup_domain} (#{current_user.startup_id})
       = link_to "Update your startup id", get_startup_path
-      %h3 You are good now. Start tweeting with hashtag #ag & wait for 10 min for it to appear on your startup status
+      %h3 You are good now. Start tweeting with hashtag #ag. 
+      %p The app would check every hour & update your startup status with your latest tweet containing #ag. Angellist allows only 10 updates per day & they override updates to show only one (latest) update for the day.
+
       %br
       %br
       = link_to "Check & publish my tweets to angelList now", fetch_n_publish_path

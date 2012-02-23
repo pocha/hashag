@@ -17,28 +17,24 @@ class User < ActiveRecord::Base
   end
 
 	def fetch_n_publish
-	
 
 			Twitter.configure do |config|
 				config.oauth_token = self.twitter_oauth_token
 				config.oauth_token_secret = self.twitter_oauth_token_secret
 			end
 			
-			@tweets = Twitter.search("from:#{self.name} #ag", :since_id => self.last_tweet_id, :result_type => 'recent')
+			tweet = Twitter.search("from:#{self.name} #ag", :since_id => self.last_tweet_id, :rpp => 1, :result_type => 'recent').first
 
 			client = AngellistApi::Client.new(:access_token => self.angellist_oauth_token)
 			
-			@tweets.each do |t|
-				client.post_status_updates(:startup_id => self.startup_id, :message => t.text)
-			end
+			client.post_status_updates(:startup_id => self.startup_id, :message => tweet.text)
 		
-			if (!@tweets.empty?)
-				self.last_tweet_id = @tweets[0].id
+			if (!tweet.nil?)
+				self.last_tweet_id = tweet.id
 				self.save
 			end
 			
-			return @tweets 
-			
+			return tweet
 
 	end
 

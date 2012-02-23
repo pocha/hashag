@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
   def fetch_n_publish
 		
-		@tweets = current_user.fetch_n_publish
+		@tweet = current_user.fetch_n_publish
 
 		render 'fetch_n_publish'
 
