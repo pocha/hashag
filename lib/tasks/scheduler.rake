@@ -5,8 +5,8 @@ namespace :publish do
 			puts "parsing user #{user.name}"
 			if (!user.startup_id.nil?)
 				begin 
-					return_data = user.fetch_n_publish
-					puts return_data.to_yaml
+					tweet = user.fetch_n_publish
+					puts return_data.text
 				rescue Exception => e
 					puts "Error: #{e}"
 				end
