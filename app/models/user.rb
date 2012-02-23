@@ -24,12 +24,10 @@ class User < ActiveRecord::Base
 			end
 			
 			tweet = Twitter.search("from:#{self.name} #ag", :since_id => self.last_tweet_id, :rpp => 1, :result_type => 'recent').first
-
-			client = AngellistApi::Client.new(:access_token => self.angellist_oauth_token)
-			
-			client.post_status_updates(:startup_id => self.startup_id, :message => tweet.text)
 		
 			if (!tweet.nil?)
+				client = AngellistApi::Client.new(:access_token => self.angellist_oauth_token)
+				client.post_status_updates(:startup_id => self.startup_id, :message => tweet.text)
 				self.last_tweet_id = tweet.id
 				self.save
 			end
