@@ -32,7 +32,7 @@ Although the app can be deployed on any rails server, below are the steps to get
 3. Now go to twitter & tweet from your account with '#ag' in it. Come back to the app, hit on 'Check & publish my tweets to angellist'. The app would check for your tweets with hashtag #ag & publish the latest tweet to your startup profile. AngelList only allows 10 updates a day & they override all the updates to show only the latest for the day. 
 
 
-### Changes needed
+### To-Do
 
 1. ~~Now, I just wrote the code to check the last tweet of the user with #ag . Fetching again would repeat the tweet. This is wrong. The tweets have an id (something like a timestamp) & you can search the tweet with 'since_id' - http://rubydoc.info/gems/twitter/Twitter/Client/Search . Basically everytime the code checks for tweets, it should record the latest id of the tweet in 'since_id' field in database so that next time, the code would only check from that 'since_id'. The code is in 'app/controller_tweets_controller.rb'~~ Done
  
