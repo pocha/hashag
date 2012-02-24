@@ -39,3 +39,5 @@ Although the app can be deployed on any rails server, below are the steps to get
 2. ~~Once point 1 is done, this fetching & publishing needs to be automated. This can be done using a rake task.~~ Done
 
 3. We need to give a nice UI for it to be usable by general audience. Bootstrap css framework from twitter would be awesome to use. This is lowest in priority though.
+
+#### I am looking for contributors to take this app further. Feel free to drop me a word at pocha(at)stalkninja(dot)com if you look to work on it. Pre-requiste would be to setup your own app on heroku & pass me the link.
