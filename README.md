@@ -2,7 +2,7 @@
 
 A rails based application to publish tweets with hashtag #ag on user's startup profile at angellist (angel.co)
 
-<a href="http://blooming-frost-6120.herokuapp.com">See the Live Demo here.</a>
+<a href="http://hashag.com">See the Live Demo here.</a>
 
 ## Documentation
 
@@ -25,18 +25,17 @@ Although the app can be deployed on any rails server, below are the steps to get
 
 ### Using the app
 
-1. You need to have a twitter & angellist (angel.co) account to be able to use the app. Register at both places. Create a temp startup in your angellist account.
+1. You need to have a twitter & angellist (angel.co) account to be able to use the app. If you do not have an angel.co account, you can use - test+account@stalkninja.com test123. To hook a startup, use the domain - cottonslate.com .
 
-2. Go to http://blooming-frost-6120.herokuapp.com/ , authenticate with your twitter & then angellist. Get your startup id from your domain (mine is stalkninja.com).
+2. Go to http://hashag.com , authenticate with your twitter & then angellist.
 
-3. Now go to twitter & tweet from your account with '#ag' in it. Come back to the app, hit on 'Check & publish my tweets to angellist'. The app would fetch the tweets &  would publish it on your startup profile. 
+3. Now go to twitter & tweet from your account with '#ag' in it. Come back to the app, hit on 'Check & publish my tweets to angellist'. The app would check for your tweets with hashtag #ag & publish the latest tweet to your startup profile. AngelList only allows 10 updates a day & they override all the updates to show only the latest for the day. 
 
-P.S. - it seems getting an angellist account & creating your own startup is a pain. Drop me a mail at pocha(at)stalkninja(dot)com & I would share my credentials with you.
 
 ### Changes needed
 
-1. Now, I just wrote the code to check the last tweet of the user with #ag . Fetching again would repeat the tweet. This is wrong. The tweets have an id (something like a timestamp) & you can search the tweet with 'since_id' - http://rubydoc.info/gems/twitter/Twitter/Client/Search . Basically everytime the code checks for tweets, it should record the latest id of the tweet in 'since_id' field in database so that next time, the code would only check from that 'since_id'. The code is in 'app/controller_tweets_controller.rb'
+1. ~~Now, I just wrote the code to check the last tweet of the user with #ag . Fetching again would repeat the tweet. This is wrong. The tweets have an id (something like a timestamp) & you can search the tweet with 'since_id' - http://rubydoc.info/gems/twitter/Twitter/Client/Search . Basically everytime the code checks for tweets, it should record the latest id of the tweet in 'since_id' field in database so that next time, the code would only check from that 'since_id'. The code is in 'app/controller_tweets_controller.rb'~~ Done
  
-2. Once point 1 is done, this fetching & publishing needs to be automated. This can be done using a rake task.
+2. ~~Once point 1 is done, this fetching & publishing needs to be automated. This can be done using a rake task.~~ Done
 
 3. We need to give a nice UI for it to be usable by general audience. Bootstrap css framework from twitter would be awesome to use. This is lowest in priority though.
