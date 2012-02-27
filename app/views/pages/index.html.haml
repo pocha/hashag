@@ -11,15 +11,17 @@
     
     - if current_user.angellist_oauth_token.present?
       
-      %div{:style => 'float:left'} Welcome #{current_user.angellist_name}(AngelList)
-      %div{:style => 'float:right'}= link_to "Signout of Angellist", signout_path(:provider => 'angellist')
+      %div{:style => 'float:left'} 
+        %p Welcome #{current_user.angellist_name}(AngelList)
+      %div{:style => 'float:right'}
+        %p= link_to "Signout of Angellist", signout_path(:provider => 'angellist')
       %div{:style => 'clear:both'}
       
       - if current_user.startup_id.nil?
         = link_to "Get your startup id", get_startup_path, :class => 'btn btn-success'
       - else
-        %p Your startup #{current_user.startup_domain} (#{current_user.startup_id})
-        = link_to "Update your startup id", get_startup_path, :class => 'btn'
+        %p Your startup #{current_user.startup_domain}
+          = link_to "Update your startup id", get_startup_path, :class => 'btn'
         %br
         %hr
         %h2 You are good now. Start tweeting with hashtag #ag. 
