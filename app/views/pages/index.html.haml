@@ -20,7 +20,8 @@
       - if current_user.startup_id.nil?
         = link_to "Get your startup id", get_startup_path, :class => 'btn btn-success'
       - else
-        %p Your startup #{current_user.startup_domain}
+        %p 
+          Your startup #{current_user.startup_domain}
           = link_to "Update your startup id", get_startup_path, :class => 'btn'
         %br
         %hr
