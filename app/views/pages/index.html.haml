@@ -3,30 +3,30 @@
   - if current_user
     .alert The app is in development mode & errors are not being handled graciously.
     %p
-      %div{:style => 'float:left'} Welcome #{current_user.name}(Twitter)
-      %div{:style => 'float:right'}= link_to "Signout of Twitter", signout_path(:provider => 'twitter')
-      %div{:style => 'clear:both'}
+      %span{:style => 'float:left'} Welcome #{current_user.name}(Twitter)
+      %span{:style => 'float:right'}= link_to "Signout of Twitter", signout_path(:provider => 'twitter')
+      %span{:style => 'clear:both'}
     
     - if current_user.angellist_oauth_token.present?
       %p
-        %div{:style => 'float:left'} Welcome #{current_user.angellist_name}(AngelList)
-        %div{:style => 'float:right'}= link_to "Signout of Angellist", signout_path(:provider => 'angellist')
-        %div{:style => 'clear:both'}
+        %span{:style => 'float:left'} Welcome #{current_user.angellist_name}(AngelList)
+        %span{:style => 'float:right'}= link_to "Signout of Angellist", signout_path(:provider => 'angellist')
+        %span{:style => 'clear:both'}
       
       - if current_user.startup_id.nil?
         = link_to "Get your startup id", get_startup_path, :class => 'btn btn-success'
       - else
         %p Your startup #{current_user.startup_domain} (#{current_user.startup_id})
         = link_to "Update your startup id", get_startup_path, :class => 'btn'
-
-        %h2 You are good now. Start tweeting with hashtag #ag. 
         %br
+	%hr
+        %h2 You are good now. Start tweeting with hashtag #ag. 
         %div The app would check every hour & update your startup status with your latest tweet containing #ag. Angellist allows only 10 updates per day & they override updates to show only one (latest) update for the day.
 
         %br
         = link_to "Check & publish my tweets to angelList now", fetch_n_publish_path, :class => 'btn btn-success'
-        %br
-        .alert Done setting up ? Just close the browser & go home. Signing out from angellist &/or twitter will destroy the tokens & the app would not publish on your stream anymore.
+        
+        %p{:class => 'alert alert-success'} Done setting up ? Just close the browser & go home. Signing out from angellist &/or twitter will destroy the tokens & the app would not publish on your stream anymore.
      
     - else
       = link_to "Authenticate with Angellist", "/auth/angellist", :class => 'btn btn-primary'
