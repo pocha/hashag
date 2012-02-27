@@ -2,16 +2,18 @@
   
   - if current_user
     .alert The app is in development mode & errors are not being handled graciously.
-    %p
-      %span{:style => 'float:left'} Welcome #{current_user.name}(Twitter)
-      %span{:style => 'float:right'}= link_to "Signout of Twitter", signout_path(:provider => 'twitter')
-      %span{:style => 'clear:both'}
+    
+    %div{:style => 'float:left'} 
+      %p Welcome #{current_user.name}(Twitter)
+    %div{:style => 'float:right'}
+      %p= link_to "Signout of Twitter", signout_path(:provider => 'twitter')
+    %div{:style => 'clear:both'}
     
     - if current_user.angellist_oauth_token.present?
-      %p
-        %span{:style => 'float:left'} Welcome #{current_user.angellist_name}(AngelList)
-        %span{:style => 'float:right'}= link_to "Signout of Angellist", signout_path(:provider => 'angellist')
-        %span{:style => 'clear:both'}
+      
+      %div{:style => 'float:left'} Welcome #{current_user.angellist_name}(AngelList)
+      %div{:style => 'float:right'}= link_to "Signout of Angellist", signout_path(:provider => 'angellist')
+      %div{:style => 'clear:both'}
       
       - if current_user.startup_id.nil?
         = link_to "Get your startup id", get_startup_path, :class => 'btn btn-success'
@@ -25,8 +27,9 @@
 
         %br
         = link_to "Check & publish my tweets to angelList now", fetch_n_publish_path, :class => 'btn btn-success'
-        
-        %p{:class => 'alert alert-success'} Done setting up ? Just close the browser & go home. Signing out from angellist &/or twitter will destroy the tokens & the app would not publish on your stream anymore.
+        %br
+        %br
+        %div{:class => 'alert alert-success'} Done setting up ? Just close the browser & go home. Signing out from angellist &/or twitter will destroy the tokens & the app would not publish on your stream anymore.
      
     - else
       = link_to "Authenticate with Angellist", "/auth/angellist", :class => 'btn btn-primary'
