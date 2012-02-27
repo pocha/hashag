@@ -24,12 +24,15 @@ gem 'angellist_api', git: 'git://github.com/utkarshkukreti/angellist-api.git', b
 gem 'haml-rails'
 gem 'compass', '~> 0.12.alpha.4'
 gem 'heroku'
-gem 'pg'
+gem "twitter-bootstrap-rails"
 
 group :test, :development do
   gem 'rspec-rails'
+	gem 'sqlite3'
+	gem 'taps'
 end
 
 group :production do
   gem 'unicorn'
+	gem 'pg'
 end

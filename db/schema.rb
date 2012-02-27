@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120221100030) do
+ActiveRecord::Schema.define(:version => 20120222044200) do
 
   create_table "users", :force => true do |t|
     t.string   "provider"
@@ -26,7 +26,8 @@ ActiveRecord::Schema.define(:version => 20120221100030) do
     t.boolean  "active"
     t.integer  "startup_id"
     t.string   "startup_domain"
-    t.integer  "last_tweet_id",                :default => 0, :null => false
+    t.string   "last_tweet_id",                :default => "0", :null => false
+    t.string   "angellist_name"
   end
 
 end
