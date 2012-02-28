@@ -40,4 +40,8 @@ Although the app can be deployed on any rails server, below are the steps to get
 
 3. ~~We need to give a nice UI for it to be usable by general audience. Bootstrap css framework from twitter would be awesome to use. This is lowest in priority though.~~
 
+4. Error handling. Currently, if somebody gives wrong username, password for twitter/angellist - the error is not being handled. Also, if a domain of startup is specified & if the domain does not exist, the error is not handled either.
+
+5. The scheduler add on is used to run the cron job of checking tweets every hour. Error could be due to twitter search getting timed out, twitter is loaded etc need to be handled. Posting error to angellist or the call to post timing out need to be handled too. 
+
 #### I am looking for contributors to take this app further. Feel free to drop me a word at pocha(at)stalkninja(dot)com if you look to work on it. Pre-requiste would be to setup your own app on heroku & pass me the link.
