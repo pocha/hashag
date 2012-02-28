@@ -1,6 +1,7 @@
 !!! 5
 %html{:lang => "en"}
   %head
+    %meta{ :name => "viewport", :content => "width=device-width initial-scale=1.0" }
     %meta{:charset => "utf-8"}/
     %title= content_for?(:title) ? yield(:title) : "hashAG | hook your twitter account with angelList"
     = csrf_meta_tags
@@ -14,7 +15,7 @@
       }
     = stylesheet_link_tag "application", :media => "all"
     %link{:href => "http://fonts.googleapis.com/css?family=Allura", :rel => "stylesheet", :type => "text/css"}
-    %media{ :name => "viewport", :content => "width=device-width initial-scale=1.0" }
+
 
     / Le fav and touch icons
     %link{:href => "images/favicon.ico", :rel => "shortcut icon"}/
