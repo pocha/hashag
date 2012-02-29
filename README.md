@@ -6,7 +6,7 @@ A rails based application to publish tweets with hashtag #ag on user's startup p
 
 ## Documentation
 
-hashAG requires the user to authenticate from his twitter first. The user then needs to authenticate using his angellist account. The publishing to angellist part is not automated yet. There is a button that comes up to check & publish the tweet with hashtag #ag to angellist account.
+hashAG requires the user to authenticate from his twitter first. The user then needs to authenticate using his angellist account. The app checks for your tweets with hashtag #ag every hour & publish them onto your angellist startup status.
 
 ### Getting Started
 
